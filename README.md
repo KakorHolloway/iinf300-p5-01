@@ -23,3 +23,13 @@ Déployez l'environnement dans le projet de votre groupe tentez de vous connecte
 
 N'oubliez pas de modifier le nom de la route.
 (ex: gp 1 utilise gp 2....)
+
+## Deuxième partie mise en place des règles d'ingress
+
+Relancez la commande ``` oc replace --force -f exo1/``` pour reset l'environnement.
+
+Dans votre propre namespace testez que la policy fonctionne bien et vous empêche de vous connecter sur le mysql de votre propre namespace. 
+
+Une fois vérifié, créez la network policy pour autoriser votre pod mediawiki à accéder sur le port 3306 à votre base de donnée. 
+
+Pour la syntaxe du fichier reprenez l'exemple de la documentation officielle (vous pouvez ignorer la partie CCIDR dans les deux cas) : https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource
